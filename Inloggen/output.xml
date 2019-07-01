@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.1.1 (Python 3.7.3 on win32)" generated="20190628 09:34:19.177" rpa="false">
+<suite id="s1" name="Inloggen" source="C:\Users\nbr040\Desktop\eclipse-workspace\Inloggen">
+<suite id="s1-s1" name="Features" source="C:\Users\nbr040\Desktop\eclipse-workspace\Inloggen\Features">
+<suite id="s1-s1-s1" name="Inloggen feature" source="C:\Users\nbr040\Desktop\eclipse-workspace\Inloggen\Features\Inloggen_feature.robot">
+<test id="s1-s1-s1-t1" name="Scenario: Happyflow -Inloggen met geldige gebruikersnaam en wachtwoord">
+<kw name="Given ik op de loginpagina ben" library="Inloggen_steps">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:19.849" level="INFO">Opening browser 'Chrome' to base url 'https://werkgever-portaal-t.test.local/iam/inloggen'.</msg>
+<status status="PASS" starttime="20190628 09:34:19.848" endtime="20190628 09:34:23.222"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:19.847" endtime="20190628 09:34:23.223"></status>
+</kw>
+<kw name="When ik een geldig gebruikersnaam en wachtwoord invoer" library="Inloggen_steps">
+<kw name="Input gebruikersnaam" library="Loginpagina_helper">
+<arguments>
+<arg>${gebruikersnaam}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>//button[.//text()='Inloggen']</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:23.225" endtime="20190628 09:34:24.775"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${Button}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:24.776" level="INFO">Clicking button '//button[text() ='Inloggen']'.</msg>
+<status status="PASS" starttime="20190628 09:34:24.775" endtime="20190628 09:34:24.965"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator_gebrnaam}</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:24.965" endtime="20190628 09:34:25.018"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator_gebrnaam}</arg>
+<arg>${input}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:25.019" level="INFO">Typing text 'h.awai@gmail.com' into text field 'id=loginveld'.</msg>
+<status status="PASS" starttime="20190628 09:34:25.018" endtime="20190628 09:34:25.228"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:23.224" endtime="20190628 09:34:25.229"></status>
+</kw>
+<kw name="Input wachtwoord" library="Loginpagina_helper">
+<arguments>
+<arg>${wachtwoord}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator_wachtwoord}</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:25.232" endtime="20190628 09:34:25.273"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator_wachtwoord}</arg>
+<arg>${input}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:25.274" level="INFO">Typing text 'Tsc1234!' into text field 'id=loginpassword'.</msg>
+<status status="PASS" starttime="20190628 09:34:25.273" endtime="20190628 09:34:25.425"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:25.229" endtime="20190628 09:34:25.426"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:23.223" endtime="20190628 09:34:25.426"></status>
+</kw>
+<kw name="Then zie ik de applicatie overzicht pagina" library="Inloggen_steps">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${Button}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:25.428" level="INFO">Clicking button '//button[text() ='Inloggen']'.</msg>
+<status status="PASS" starttime="20190628 09:34:25.428" endtime="20190628 09:34:25.549"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:25.427" endtime="20190628 09:34:25.549"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:19.845" endtime="20190628 09:34:25.550" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="Scenario: validatiecheck-Inloggen met geldige gebruikersnaam en ongeldig wachtwoord">
+<kw name="Given Ik op de loginpagina ben" library="Inloggen_steps">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:25.554" level="INFO">Opening browser 'Chrome' to base url 'https://werkgever-portaal-t.test.local/iam/inloggen'.</msg>
+<status status="PASS" starttime="20190628 09:34:25.553" endtime="20190628 09:34:28.865"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:25.552" endtime="20190628 09:34:28.866"></status>
+</kw>
+<kw name="When Ik een geldig gebruikersnaam, maar een ongeldig wachtwoord invoer" library="Inloggen_steps">
+<kw name="Input gebruikersnaam" library="Loginpagina_helper">
+<arguments>
+<arg>${gebruikersnaam}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>//button[.//text()='Inloggen']</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:28.869" endtime="20190628 09:34:31.341"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${Button}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:31.343" level="INFO">Clicking button '//button[text() ='Inloggen']'.</msg>
+<status status="PASS" starttime="20190628 09:34:31.342" endtime="20190628 09:34:31.511"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator_gebrnaam}</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:31.512" endtime="20190628 09:34:31.551"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator_gebrnaam}</arg>
+<arg>${input}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:31.552" level="INFO">Typing text 'h.awai@gmail.com' into text field 'id=loginveld'.</msg>
+<status status="PASS" starttime="20190628 09:34:31.552" endtime="20190628 09:34:31.732"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:28.868" endtime="20190628 09:34:31.732"></status>
+</kw>
+<kw name="Input wachtwoordfout" library="Loginpagina_helper">
+<arguments>
+<arg>${wachtwoordfout}</arg>
+</arguments>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>${locator_wachtwoord}</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:31.733" endtime="20190628 09:34:31.771"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into text field identified by ``locator``.</doc>
+<arguments>
+<arg>${locator_wachtwoord}</arg>
+<arg>${input}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:31.773" level="INFO">Typing text 'Ditiseenfoutwachtwoord' into text field 'id=loginpassword'.</msg>
+<status status="PASS" starttime="20190628 09:34:31.772" endtime="20190628 09:34:31.977"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:31.733" endtime="20190628 09:34:31.977"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:28.867" endtime="20190628 09:34:31.977"></status>
+</kw>
+<kw name="Then zie ik de fout bij inloggen validatie banner" library="Inloggen_steps">
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${Button}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:31.979" level="INFO">Clicking button '//button[text() ='Inloggen']'.</msg>
+<status status="PASS" starttime="20190628 09:34:31.979" endtime="20190628 09:34:32.098"></status>
+</kw>
+<kw name="wachtenOpFoutmeldingbanner" library="Loginpagina_helper">
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5</arg>
+</arguments>
+<msg timestamp="20190628 09:34:37.101" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20190628 09:34:32.099" endtime="20190628 09:34:37.101"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>css:.alert-header</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:37.102" endtime="20190628 09:34:37.123"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:32.098" endtime="20190628 09:34:37.124"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:31.978" endtime="20190628 09:34:37.124"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:25.551" endtime="20190628 09:34:37.125" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t3" name="Scenario: Validatiecheck - Inloggen zonder gebruikersnaam en wachtwoord">
+<kw name="Given Ik op de loginpagina ben" library="Inloggen_steps">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:37.128" level="INFO">Opening browser 'Chrome' to base url 'https://werkgever-portaal-t.test.local/iam/inloggen'.</msg>
+<status status="PASS" starttime="20190628 09:34:37.127" endtime="20190628 09:34:40.330"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:37.127" endtime="20190628 09:34:40.330"></status>
+</kw>
+<kw name="When ik zonder gebruikersnaam en wachtwoord probeer in te loggen" library="Inloggen_steps">
+<kw name="wachtopdeknop" library="Loginpagina_helper">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>//button[.//text()='Inloggen']</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:40.334" endtime="20190628 09:34:42.360"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${Button}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:42.361" level="INFO">Clicking button '//button[text() ='Inloggen']'.</msg>
+<status status="PASS" starttime="20190628 09:34:42.360" endtime="20190628 09:34:42.536"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` is visible.</doc>
+<arguments>
+<arg>//button[.//text()='Inloggen']</arg>
+<arg>10</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:42.537" endtime="20190628 09:34:42.574"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks button identified by ``locator``.</doc>
+<arguments>
+<arg>${Button}</arg>
+</arguments>
+<msg timestamp="20190628 09:34:42.576" level="INFO">Clicking button '//button[text() ='Inloggen']'.</msg>
+<status status="PASS" starttime="20190628 09:34:42.575" endtime="20190628 09:34:42.708"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:40.333" endtime="20190628 09:34:42.708"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:40.331" endtime="20190628 09:34:42.709"></status>
+</kw>
+<kw name="Then zie ik twee validatiemeldingen bij de gebruikersnaam en wachtwoord" library="Inloggen_steps">
+<kw name="wachtenopvalidatiemelding" library="Loginpagina_helper">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until element ``locator`` appears on current page.</doc>
+<arguments>
+<arg>css:.icon.text-hide.icon-sm.icon-help-danger</arg>
+</arguments>
+<status status="PASS" starttime="20190628 09:34:42.710" endtime="20190628 09:34:42.735"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:42.710" endtime="20190628 09:34:42.735"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:42.709" endtime="20190628 09:34:42.736"></status>
+</kw>
+<status status="PASS" starttime="20190628 09:34:37.126" endtime="20190628 09:34:42.736" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20190628 09:34:19.283" endtime="20190628 09:34:42.737"></status>
+</suite>
+<status status="PASS" starttime="20190628 09:34:19.279" endtime="20190628 09:34:42.745"></status>
+</suite>
+<status status="PASS" starttime="20190628 09:34:19.231" endtime="20190628 09:34:42.753"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" id="s1" name="Inloggen">Inloggen</stat>
+<stat pass="3" fail="0" id="s1-s1" name="Features">Inloggen.Features</stat>
+<stat pass="3" fail="0" id="s1-s1-s1" name="Inloggen feature">Inloggen.Features.Inloggen feature</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
